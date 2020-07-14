@@ -5,6 +5,7 @@ const btn = document.querySelector('button');
 
 // Make an AJAX request
 function getJSON(url, callback) {
+  return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.onload = () => {
@@ -14,6 +15,7 @@ function getJSON(url, callback) {
         }
     };
     xhr.send();
+  });
 }
 
 // Generate the markup for each profile
